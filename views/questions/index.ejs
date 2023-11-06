@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs') %>
+
+<a href="/games/<%= game._id %>/questions/new" class="btn btn-md btn-success">Add a new question</a>
+<% game.questions.forEach((ques, i) => { %>
+    <div><%= ques.title %></div>
+    <div><%= ques.answer %></div>
+    <a href="/games/<%= game._id %>/questions/<%= i %>/edit" class="btn btn-warning">Edit</a>
+    <form action="/games/<%= game._id %>/questions/<%= i %>?_method=delete" method="post">
+        <input type="submit" value="Delete" class="btn btn-sm btn-danger">
+    </form>
+    <hr>
+<% }) %>
+
+
+<%- include('../partials/footer.ejs') %>

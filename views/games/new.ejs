@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+<h1>new page of games</h1>
+<form action="/games" method="post">
+    <input required type="text" name="gameName" placeholder="Game name" id="">
+    <input required type="text" name="studioName" placeholder="Studio name" id="">
+    <input required type="text" name="genre" placeholder="Genre" id="">
+    <textarea required name="description" id="" cols="30" rows="10" placeholder="Description"></textarea>
+    <input required type="number" name="cost" placeholder="Cost" id="" min="0">
+    <input type="submit" value="Add a new game">
+</form>
+<%- include('../partials/footer') %>

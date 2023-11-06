@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+<h1>Show page of games <%= foundGame.gameName %></h1>
+<div><%= foundGame.gameName %></div>
+<div><%= foundGame.studioName %></div>
+<div><%= foundGame.genre %></div>
+<div><%= foundGame.description %></div>
+<div><%= foundGame.cost %></div>
+<div><%= foundGame.status %></div>
+
+<a href="/games/<%= foundGame._id %>/edit" class="btn btn-warning">Edit</a>
+<form action="/games/<%= foundGame._id %>?_method=delete" method="post">
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
+<% if (currentUser) { %>
+    <a href="/games/<%= foundGame._id %>/add/<%= currentUser._id %>" class="btn btn-info">Add</a>
+<% } %>
+<a href="/games/<%= foundGame._id %>/questions" class="btn btn-primary">Questions</a>
+
+<%- include('../partials/footer') %>

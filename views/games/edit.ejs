@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+<h1>Edit page for game <%= foundGame.gameName %></h1>
+<form action="/games/<%= foundGame._id %>?_method=patch" method="post">
+    <input required type="text" name="gameName" value="<%= foundGame.gameName %>" id="">
+    <input required type="text" name="studioName" value="<%= foundGame.studioName %>" id="">
+    <input required type="text" name="genre" value="<%= foundGame.genre %>" id="">
+    <textarea required name="description" id="" cols="30" rows="10"><%= foundGame.description %></textarea>
+    <input required type="number" name="cost" value="<%= foundGame.cost %>" id="" min="0">
+    <input type="submit" value="Edit a game">
+</form>
+<%- include('../partials/footer') %>

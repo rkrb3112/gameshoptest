@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h1>Index page of games</h1>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="/games?page=<%= allGames.prevPage %>">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="/games?page=<%= allGames.page %>"><%= allGames.page %></a></li>
+      <li class="page-item"><a class="page-link" href="/games?page=<%= allGames.page + 1 %>"><%= allGames.page + 1 %></a></li>
+      <li class="page-item"><a class="page-link" href="/games?page=<%= allGames.page + 2 %>"><%= allGames.page + 2 %></a></li>
+      <li class="page-item"><a class="page-link" href="/games?page=<%= allGames.nextPage %>">Next</a></li>
+    </ul>
+</nav>
+<% for( let game of allGames.docs ) { %>
+    <div><%= game.gameName %> - <a href="/games/<%= game._id %>">view more</a></div>
+<% } %>
+
+<%- include('../partials/footer') %>

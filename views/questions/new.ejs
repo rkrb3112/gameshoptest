@@ -1,0 +1,9 @@
+<%- include('../partials/header.ejs') %>
+
+<form action="/games/<%= id %>/questions" method="post">
+    <input type="text" name="title" id="">
+    <input type="text" name="answer" id="">
+    <input type="submit" value="Add question">
+</form>
+
+<%- include('../partials/footer.ejs') %>
